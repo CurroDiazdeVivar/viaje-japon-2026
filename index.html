@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🇯🇵 Plan de viaje: Tokio, Hakone, Kioto, Osaka y Doha 🕌 2026</title>
+<style>
+  :root {
+    --bg: #0f0f1a;
+    --surface: #1a1a2e;
+    --surface2: #232340;
+    --accent: #ff6b6b;
+    --accent2: #feca57;
+    --text: #e8e8f0;
+    --text-muted: #9898b4;
+    --border: #2a2a45;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #0f0f1a 0%, #1a1a3e 40%, #2a1040 100%);
+    padding: 3rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero .sub {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .hero .meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .hero .meta span {
+    background: var(--surface2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+  }
+
+  /* Container */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+  }
+
+  /* Sections */
+  section {
+    margin-bottom: 2.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+  }
+  h3 {
+    font-size: 1.2rem;
+    margin: 1.5rem 0 0.75rem;
+    color: var(--accent2);
+  }
+  h3 .day-date {
+    color: var(--text-muted);
+    font-weight: normal;
+    font-size: 0.9rem;
+  }
+  p { margin: 0.5rem 0; }
+
+  /* Day images */
+  .day-img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 0.5rem 0 1rem;
+    border: 1px solid var(--border);
+  }
+
+  /* Tables */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 1rem 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    min-width: 600px;
+  }
+  th {
+    background: var(--surface2);
+    color: var(--accent2);
+    padding: 0.6rem 0.5rem;
+    text-align: left;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  td {
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:nth-child(even) { background: var(--surface); }
+  tr:nth-child(odd) { background: rgba(255,255,255,0.02); }
+
+  /* Lists */
+  ul, ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+  li { margin: 0.3rem 0; }
+  strong { color: var(--accent2); }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 4px solid var(--accent);
+    background: var(--surface2);
+    padding: 0.75rem 1rem;
+    margin: 0.75rem 0;
+    border-radius: 0 8px 8px 0;
+    color: var(--text-muted);
+  }
+  blockquote strong { color: var(--accent2); }
+
+  /* Horizontal rule / divider */
+  hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 2rem 0;
+  }
+
+  /* Tips */
+  .tip {
+    background: var(--surface2);
+    border-left: 4px solid #5dade2;
+    padding: 0.75rem 1rem;
+    margin: 0.75rem 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .tip::before { content: "💡 "; font-weight: bold; }
+
+  /* Comida strategy boxes */
+  .strategy-box {
+    background: var(--surface2);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-left: 4px solid var(--accent);
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .container { padding: 1rem 0.75rem; }
+    table { font-size: 0.78rem; min-width: 500px; }
+    th, td { padding: 0.4rem 0.3rem; }
+    .hero { padding: 2rem 0.75rem; }
+    .hero .meta { flex-direction: column; align-items: center; }
+  }
+
+  /* Smooth link styles */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Checklists */
+  .checklist { list-style: none; padding: 0; }
+  .checklist li::before { content: "✅ "; }
+  .todo li::before { content: "⬜ "; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>🇯🇵 Plan de viaje: Tokio, Hakone, Kioto, Osaka y Doha 🕌 2026</h1>
+  <p class="sub">13 días · Julio-Agosto 2026</p>
+  <div class="meta">
+    <span>👥 Curro, Nuria &amp; Carmen</span>
+    <span>📅 24 jul → 5 ago</span>
+    <span>🎒 Tourmundial · 266HHX2C</span>
+    <span>✈️ Qatar Airways · 7NYVGB</span>
+    <span>📞 Laura Fernández · 941 20 24 28</span>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ===== RESUMEN RÁPIDO ===== -->
+<section>
+<h2>📋 Resumen rápido</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Fecha</th><th>Día</th><th>Plan</th><th>Alojamiento</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>24 jul</strong></td><td>Vie</td><td>✈️ MAD→DOH→NRT</td><td>Avión</td></tr>
+<tr><td><strong>25 jul</strong></td><td>Sáb</td><td>🗼 Llegada Tokio</td><td>Royal Park Hotel Nihonbashi</td></tr>
+<tr><td><strong>26 jul</strong></td><td>Dom</td><td>🗼 Tokio (Asakusa, Shibuya)</td><td>Royal Park Hotel Nihonbashi</td></tr>
+<tr><td><strong>27 jul</strong></td><td>Lun</td><td>🗼 Tokio (Akihabara, Shinjuku)</td><td>Royal Park Hotel Nihonbashi</td></tr>
+<tr><td><strong>28 jul</strong></td><td>Mar</td><td>🌊 Tokio→Hakone (Onsen)</td><td>Mikawaya Ryokan ♨️</td></tr>
+<tr><td><strong>29 jul</strong></td><td>Mié</td><td>🚄 Hakone→Kioto</td><td>DoubleTree by Hilton Kyoto Higashiyama</td></tr>
+<tr><td><strong>30 jul</strong></td><td>Jue</td><td>⛩️ Kioto (Fushimi Inari, Arashiyama)</td><td>DoubleTree by Hilton Kyoto Higashiyama</td></tr>
+<tr><td><strong>31 jul</strong></td><td>Vie</td><td>⛩️ Kioto (Kinkaku-ji, día libre)</td><td>DoubleTree by Hilton Kyoto Higashiyama</td></tr>
+<tr><td><strong>1 ago</strong></td><td>Sáb</td><td>🏯 Kioto→Osaka (Dotonbori)</td><td>Hotel Nikko Osaka</td></tr>
+<tr><td><strong>2 ago</strong></td><td>Dom</td><td>🏯 Osaka (Castillo, Shinsaibashi)</td><td>Hotel Nikko Osaka</td></tr>
+<tr><td><strong>3 ago</strong></td><td>Lun</td><td>✈️ Osaka→KIX→DOH</td><td>Hilton Doha</td></tr>
+<tr><td><strong>4 ago</strong></td><td>Mar</td><td>🕌 Doha</td><td>Hilton Doha</td></tr>
+<tr><td><strong>5 ago</strong></td><td>Mié</td><td>✈️ DOH→MAD</td><td>🏠 Casa</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<hr>
+
+<!-- ===== DIVISAS Y PAGOS ===== -->
+<section>
+<h2>💱 Divisas y pagos</h2>
+<ul>
+  <li><strong>1 € ≈ 186 ¥</strong> | <strong>1 € ≈ 4 QAR</strong></li>
+  <li><strong>Japón:</strong> Llevar efectivo (mínimo ¥50.000-80.000/persona para el viaje). Sacar en cajeros 7-Eleven/Lawson con <strong>Revolut o N26</strong> (sin comisiones). La Suica/Pasmo digital en el Apple Wallet es tu mejor amiga para transporte y konbinis.</li>
+  <li><strong>Doha:</strong> Tarjeta de crédito en todos sitios. Poco efectivo necesario.</li>
+  <li><strong>No lleves pasta al cambio en aeropuerto</strong> — el cambio en ciudad es mejor.</li>
+</ul>
+</section>
+
+<hr>
+
+<!-- ===== ESTRATEGIA DE COMIDAS ===== -->
+<section>
+<h2>🍔 Estrategia de comidas</h2>
+<blockquote>
+<strong>Curro</strong> → prefiere occidental (hamburguesas, pasta, carne, pizza)<br>
+<strong>Nuria y Carmen</strong> → les encanta la comida asiática<br>
+<strong>Los 3</strong> → fans del Hard Rock Café
+</blockquote>
+<p><strong>Cómo alternar:</strong> Un día comida asiática para ellas, cena occidental para todos, y viceversa. Muchos sitios tienen opción mixta.</p>
+<div class="strategy-box">
+<p><strong>Sitios para Curro cuando toque occidental:</strong></p>
+<ul>
+  <li>🎸 <strong>Hard Rock Café</strong> (Tokio: Yebisu Garden Place | Osaka: Dotonbori) — platos ¥2.500-4.500</li>
+  <li>🥩 <strong>Ikinari Steak</strong> — carne a precio decente, de pie</li>
+  <li>🍔 <strong>MOS Burger / Freshness Burger</strong> — hamburguesas japonesas de calidad</li>
+  <li>🍛 <strong>Curry japonés (Coco Ichibanya)</strong> — más bien estofado, nivel de picante regulable</li>
+  <li>🐷 <strong>Tonkatsu</strong> (cerdo empanado frito) — Maitreya o Kimukatsu</li>
+  <li>🥟 <strong>Gyoza</strong> (empanadillas japonesas) — le gustan a todo el mundo</li>
+</ul>
+</div>
+<p><strong>Presupuesto comidas/persona/día:</strong></p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Tipo</th><th>JPY</th><th>EUR</th></tr></thead>
+<tbody>
+<tr><td>Desayuno (hotel)</td><td>0</td><td>0</td></tr>
+<tr><td>Comida rápida</td><td>¥800-1.200</td><td>€4-7</td></tr>
+<tr><td>Restaurante medio</td><td>¥1.500-2.500</td><td>€8-14</td></tr>
+<tr><td>Cena buena</td><td>¥3.000-6.000</td><td>€16-32</td></tr>
+<tr><td><strong>Total día</strong></td><td><strong>¥5.000-8.000</strong></td><td><strong>€27-43</strong></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<hr>
+
+<!-- ===== TRASLADOS ===== -->
+<section>
+<h2>🚗 TRASLADOS — Cómo moverse en cada etapa</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Trayecto</th><th>Medio</th><th>Precio</th><th>Tiempo</th><th>Pagas con</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td>🏠 <strong>Casa → Aeropuerto Madrid T4</strong></td>
+  <td>Coche propio 🅿️</td>
+  <td>Parking ViaT 150€</td>
+  <td>30-60min</td>
+  <td>ViaT 6275120002786508</td>
+</tr>
+<tr>
+  <td>✈️ <strong>Narita T2 → Royal Park Hotel Nihonbashi</strong></td>
+  <td><strong>Narita Express (N'EX)</strong> hasta Tokio Station → JR Yamanote a Nihonbashi</td>
+  <td>¥3.070/pers (o JR Pass si activado)</td>
+  <td>50min</td>
+  <td>Suica/Pasmo o JR Pass</td>
+</tr>
+<tr>
+  <td></td>
+  <td><em>Alternativa:</em> <strong>Keisei Skyliner</strong> hasta Ueno → Metro Hibiya a Nihonbashi</td>
+  <td>¥2.570/pers</td>
+  <td>35min</td>
+  <td>Suica/Pasmo</td>
+</tr>
+<tr>
+  <td></td>
+  <td><em>Alternativa low-cost:</em> <strong>Autobús limousine</strong> → Tokio Station → taxi al hotel</td>
+  <td>¥1.300/pers bus</td>
+  <td>90min</td>
+  <td>Efectivo</td>
+</tr>
+<tr>
+  <td>🏨 <strong>Royal Park Hotel → Akihabara</strong></td>
+  <td>Metro Hibiya (desde Kodemmacho) o andando 20min</td>
+  <td>~¥200</td>
+  <td>5min</td>
+  <td>Suica/Pasmo</td>
+</tr>
+<tr>
+  <td>🏨 <strong>Royal Park Hotel → Hakone</strong></td>
+  <td>Metro a Tokio Station → <strong>Shinkansen a Odawara</strong> (35min) → Autobús/taxi a Hakone-Yumoto</td>
+  <td>Suplemento Hakone Free Pass (~¥5.700)</td>
+  <td>1.5h</td>
+  <td>JR Pass + efectivo</td>
+</tr>
+<tr>
+  <td>🏨 <strong>Mikawaya Ryokan → Kioto</strong></td>
+  <td>Autobús a Odawara (30min) → <strong>Shinkansen Hikari a Kioto</strong> (1h45min)</td>
+  <td>✅ <strong>CUBIERTO con JR Pass</strong></td>
+  <td>2.5h</td>
+  <td>JR Pass</td>
+</tr>
+<tr>
+  <td>🏨 <strong>DoubleTree Kioto → Fushimi Inari</strong></td>
+  <td>Tren JR Nara Line desde Kioto Station a Inari (2 paradas)</td>
+  <td>✅ <strong>CUBIERTO JR Pass</strong></td>
+  <td>10min</td>
+  <td>JR Pass</td>
+</tr>
+<tr>
+  <td>🏨 <strong>DoubleTree Kioto → Arashiyama</strong></td>
+  <td>Tren JR Sagano desde Kioto Station (directo)</td>
+  <td>✅ <strong>CUBIERTO JR Pass</strong></td>
+  <td>15min</td>
+  <td>JR Pass</td>
+</tr>
+<tr>
+  <td>🏨 <strong>DoubleTree Kioto → Kinkaku-ji</strong></td>
+  <td>Autobús 101/102/204 (bus) desde Kioto Station</td>
+  <td>¥230</td>
+  <td>40min</td>
+  <td>Suica o efectivo</td>
+</tr>
+<tr>
+  <td>🏨 <strong>DoubleTree Kioto → Nara</strong></td>
+  <td>JR Nara Line desde Kioto Station (directo)</td>
+  <td>✅ <strong>CUBIERTO JR Pass</strong></td>
+  <td>45min</td>
+  <td>JR Pass</td>
+</tr>
+<tr>
+  <td>🏨 <strong>DoubleTree Kioto → Hotel Nikko Osaka</strong></td>
+  <td>Shinkansen desde Kioto Station a Shin-Osaka (15min) → Metro a Namba</td>
+  <td>✅ <strong>CUBIERTO JR Pass</strong></td>
+  <td>30min</td>
+  <td>JR Pass + Suica</td>
+</tr>
+<tr>
+  <td>🏨 <strong>Hotel Nikko Osaka → Castillo Osaka</strong></td>
+  <td>Metro Chuo desde Namba a Tanimachi 4</td>
+  <td>¥290</td>
+  <td>15min</td>
+  <td>Suica/Pasmo</td>
+</tr>
+<tr>
+  <td>🏨 <strong>Hotel Nikko Osaka → Aeropuerto Kansai</strong></td>
+  <td><strong>Nankai Airport Express</strong> desde Nankai Namba (directo, 40min, ~¥930) o <strong>JR Kansai Airport Line</strong> desde Tennoji (50min)</td>
+  <td>✅ JR Pass cubre JR / Nankai ~¥930</td>
+  <td>40-50min</td>
+  <td>JR Pass o Suica/Pasmo</td>
+</tr>
+<tr>
+  <td>✈️ <strong>Aeropuerto Doha → Hilton Doha</strong></td>
+  <td><strong>Taxi/Uber</strong> (mostrador oficial en llegadas)</td>
+  <td>QAR 50-70 (€13-18)</td>
+  <td>15min</td>
+  <td>Tarjeta</td>
+</tr>
+<tr>
+  <td>🏨 <strong>Hilton Doha → Souq Waqif</strong></td>
+  <td>Taxi/Uber (5min) o andando por Corniche (20min)</td>
+  <td>QAR 10-20</td>
+  <td>5-20min</td>
+  <td>Tarjeta o efectivo</td>
+</tr>
+<tr>
+  <td>🏨 <strong>Hilton Doha → Museo Islámico</strong></td>
+  <td>Taxi/Uber (5min)</td>
+  <td>QAR 10-20</td>
+  <td>5min</td>
+  <td>Tarjeta</td>
+</tr>
+<tr>
+  <td>🏨 <strong>Hilton Doha → Aeropuerto Doha</strong></td>
+  <td>Taxi/Uber</td>
+  <td>QAR 40-50 (€10-13)</td>
+  <td>10min</td>
+  <td>Tarjeta</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="tip">
+<strong>💳 Suica/Pasmo:</strong> Es una tarjeta recargable para todo el transporte público en Tokio, Kioto y Osaka. La cargáis en cualquier máquina de las estaciones con efectivo. Si tenéis iPhone, la podéis añadir directamente en Apple Wallet (sin tasa).
+</div>
+
+<p><strong>🚕 Taxis en Japón:</strong> Caros (¥600 + ¥300/km). En Madrid el parking es cerca de la T4, vais andando.</p>
+<p><strong>🚇 Metro en Tokio:</strong> Muy fácil. Google Maps os dice exactamente qué línea, dirección y andén.</p>
+<p>Tenéis <strong>JR Pass Ordinary 7 días</strong> para los 3. Se activa al canjearlo en Narita.</p>
+
+<p><strong>Mejor estrategia: Activarlo el 28 jul</strong> (cuando vayáis de Hakone a Kioto):</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Día</th><th>Fecha</th><th>Uso JR Pass</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>28 jul</td><td>🚄 Hakone→Odawara→<strong>Kioto</strong> (Shinkansen)</td></tr>
+<tr><td>2</td><td>29 jul</td><td>🚄 Kioto→días sueltos (trenes JR en Kioto)</td></tr>
+<tr><td>3</td><td>30 jul</td><td>🚄 Kioto (excursión a Nara opcional)</td></tr>
+<tr><td>4</td><td>31 jul</td><td>🚄 <strong>Kioto→Osaka</strong> (Shinkansen, 15min)</td></tr>
+<tr><td>5</td><td>1 ago</td><td>🚄 Osaka (trenes JR)</td></tr>
+<tr><td>6</td><td>2 ago</td><td>🚄 Osaka</td></tr>
+<tr><td>7</td><td>3 ago</td><td>🚄 <strong>Osaka→KIX</strong> (JR Kansai Airport Line)</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>Total coste sin JR Pass:</strong> ~¥17.000/persona → con JR Pass (~¥50.000) <strong>no se amortiza</strong> solo con estos trayectos. El beneficio real viene de:</p>
+<ul>
+  <li>Poder coger <strong>cualquier Shinkansen sin pensar</strong> (incluyendo Nozomi si pagas suplemento)</li>
+  <li>Excursiones de última hora (Nara, Himeji)</li>
+  <li>Trenes locales dentro de las ciudades</li>
+</ul>
+<p><strong>Alternativa:</strong> Si queréis ahorrar, comprad billetes sueltos y usad el JR Pass para los 3-4 días más caros. Pero como ya lo tenéis comprado, <strong>aprovechadlo — subid a todos los Shinkansen que queráis</strong>.</p>
+</section>
+
+<hr>
+
+<!-- ===== DÍA A DÍA ===== -->
+<h2>🗓️ DÍA A DÍA</h2>
+
+<!-- DÍA 1 -->
+<hr>
+<h3>📍 Día 1 — Viernes 24 de julio: Salida ✈️ <span class="day-date">| MAD → DOH → NRT</span></h3>
+<img class="day-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Qatar_Airways_Airbus_A350-1000_%28A7-ANA%29.jpg/960px-Qatar_Airways_Airbus_A350-1000_%28A7-ANA%29.jpg" alt="Qatar Airways" loading="lazy">
+
+<p><strong>05:00</strong> — Levantarse. Última revisión de maletas.</p>
+<p><strong>05:30</strong> — 🅿️ <strong>Parking Aena T4 P4</strong> (ViaT: <strong>6275120002786508</strong>, localizador <strong>KJ1WS</strong>, matrícula <strong>6657KGY</strong>)<br>
+⚠️ IMPORTANTE: Meter la matrícula en la barrera o usar el localizador impreso.</p>
+<p><strong>07:30</strong> — Facturar maletas en Mostrador Qatar Airways (T4S). Tened los pasaportes y el PNR 7NYVGB a mano.</p>
+<p><strong>09:05 → 16:50</strong> — ✈️ <strong>QR148</strong> MAD→DOH (Boeing 787-9, puerta S28)</p>
+<p>→ <strong>Escala en Doha (3h45min):</strong> Bajad, estirad las piernas. Hay buenos restaurantes en la zona de tránsito. Aprovechad para coger agua.</p>
+<p><strong>20:35 → 12:55+1</strong> — ✈️ <strong>QR806</strong> DOH→NRT (Boeing 777-300ER, puerta C16→62, 10h20min)</p>
+<div class="tip">💤 <strong>Noche en el avión.</strong> Consejo: cena pronto, poneros cómodos e intentad dormir para llegar frescos.</div>
+
+<!-- DÍA 2 -->
+<hr>
+<h3>📍 Día 2 — Sábado 25 de julio: Llegada a Tokio 🗼 <span class="day-date">| NRT → Nihonbashi</span></h3>
+<img class="day-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Skyscrapers_of_Shinjuku_2009_January.jpg/960px-Skyscrapers_of_Shinjuku_2009_January.jpg" alt="Tokio - Shinjuku" loading="lazy">
+
+<p><strong>12:55</strong> — 🛬 <strong>Aterrizaje en Narita (T2)</strong></p>
+<p><strong>Trámites en el aeropuerto (orden recomendado):</strong></p>
+<ol>
+  <li>🛂 <strong>Inmigración + recoger maletas</strong> (~30-45min)</li>
+  <li>🚄 <strong>Canje del JR Pass</strong> — Oficina JR East en llegadas (T2). Llevad los pasaportes y el voucher impreso. Os dan los pases físicos. ⚠️ Si queréis activarlo más tarde (ej: 28 jul), decidles que solo queréis <strong>canjearlo</strong> (fecha futura).</li>
+  <li>💴 <strong>Sacar yenes</strong> — Cajero 7-Eleven o Japan Post Bank en llegadas</li>
+  <li>📱 <strong>eSIM / Datos</strong> — Si lleváis Holafly, activadla ya</li>
+  <li>🚃 <strong>Suica/Pasmo digital</strong> — En Apple Wallet si alguno tiene iPhone</li>
+</ol>
+<p><strong>15:00 — Check-in Royal Park Hotel Nihonbashi</strong></p>
+<ul>
+  <li>🚄 <strong>Opción A (recomendada, 50min):</strong> Narita Express (N'EX) desde Narita T2 → Tokio Station (¥3.070) → Transbordo a JR Yamanote/Local a <strong>Nihonbashi</strong> (1 parada, ✅ JR Pass o Suica)</li>
+  <li>🚄 <strong>Opción B (más rápida, 35min):</strong> Keisei Skyliner desde Narita (¥2.570) → Ueno → Metro Hibiya a <strong>Nihonbashi</strong></li>
+  <li>🚌 <strong>Opción C (barata, 90min):</strong> Autobús Limousine → Tokio Station (¥1.300) → si llegáis muy cansados un taxi (¥1.500)</li>
+  <li>💡 <strong>Consejo:</strong> Si activáis el JR Pass en Narita, la Opción A os sale gratis. Si lo activáis más tarde, pagad con Suica/Pasmo.</li>
+</ul>
+<p><strong>Tarde-noche:</strong></p>
+<ul>
+  <li>🚶‍♂️ <strong>Paseo de reconocimiento:</strong> Nihonbashi, el puente histórico, la zona.</li>
+  <li>🍣 <strong>Cena:</strong> El primer día suave. Buscad un restaurante cerca del hotel.</li>
+  <li>🌙 <strong>Ginza</strong> (a 10min andando) — iluminación espectacular de noche</li>
+</ul>
+<div class="tip"><strong>Tip jet lag:</strong> Intentad aguantar despiertos hasta las 20:00-21:00. Si os caéis de sueño, siesta de 1h máx.</div>
+
+<!-- DÍA 3 -->
+<hr>
+<h3>📍 Día 3 — Domingo 26 de julio: Tokio ⛩️ <span class="day-date">| Asakusa · Shibuya · Harajuku</span></h3>
+<img class="day-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Shibuya_Crossing%2C_Aerial.jpg/960px-Shibuya_Crossing%2C_Aerial.jpg" alt="Shibuya Crossing" loading="lazy">
+
+<p><strong>Desayuno:</strong> En el hotel (incluido)</p>
+<p><strong>Mañana — Asakusa (clásico):</strong></p>
+<ul>
+  <li>🏮 <strong>Senso-ji</strong> (templo más antiguo de Tokio) — GRATIS. Llegad antes de las 10:00 para evitar masificaciones.</li>
+  <li>⏱️ 1.5-2h</li>
+</ul>
+<p><strong>Comida:</strong> Opciones cerca de Asakusa</p>
+<ul>
+  <li>Para <strong>ellas</strong> 🥟: <em>Sushizen</em> (sushi bueno) o <em>Ramen Yoroiya</em></li>
+  <li>Para <strong>él</strong> 🍔: <em>MOS Burger</em> o <em>KFC Japón</em> (es diferente)</li>
+  <li>Mixto: <em>Tonkatsu Imoya</em> (cerdo empanado que gusta a todos)</li>
+</ul>
+<p><strong>Tarde — Shibuya + Harajuku:</strong></p>
+<ul>
+  <li>🚶‍♂️ <strong>Shibuya Crossing</strong> — el cruce famoso. Fotos desde el Starbucks (2ª planta)</li>
+  <li>🏙️ <strong>Shibuya Sky</strong> (opcional, ¥2.200) — vistas 360° de Tokio. Reservar online</li>
+  <li>👗 <strong>Takeshita Street (Harajuku)</strong> — para Carmen, tiendas locas, crepes, ropa juvenil</li>
+  <li>🕹️ <strong>Miyashita Park</strong> (Shibuya) — tiendas, zona gaming</li>
+</ul>
+<p><strong>Cena:</strong></p>
+<ul>
+  <li>🎸 <strong>Hard Rock Café Tokio</strong> (Yebisu Garden Place) — platos ¥2.500-4.500</li>
+  <li>O <em>Ikinari Steak</em> para Curro + ellas pueden pedir aparte</li>
+</ul>
+<div class="tip">Descargad <strong>Google Maps offline de Tokio</strong> antes de salir.</div>
+
+<!-- DÍA 4 -->
+<hr>
+<h3>📍 Día 4 — Lunes 27 de julio: Tokio 🗼 <span class="day-date">| Akihabara · Shinjuku</span></h3>
+<img class="day-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Skyscrapers_of_Shinjuku_2009_January.jpg/960px-Skyscrapers_of_Shinjuku_2009_January.jpg" alt="Tokio - Shinjuku" loading="lazy">
+
+<p><strong>Desayuno:</strong> Hotel</p>
+<p><strong>Mañana — Akihabara (para Curro):</strong></p>
+<ul>
+  <li>🕹️ <strong>Akihabara Electric Town</strong> — electrónica, Yodobashi Camera, anime/manga.</li>
+  <li>⏱️ 2h</li>
+</ul>
+<p><strong>Tarde — Shinjuku:</strong></p>
+<ul>
+  <li>🏙️ <strong>Shinjuku</strong> — rascacielos, vista Tokyo Metropolitan Government Building GRATIS</li>
+  <li>⏱️ 2h</li>
+</ul>
+<p><strong>Cena:</strong></p>
+<ul>
+  <li>🥩 <strong>Ikinari Steak</strong> o algo occidental en Shinjuku</li>
+</ul>
+<div class="tip">NOTA: Ya NO se va a Hakone este día. El check-out es el 28.</div>
+
+<!-- DÍA 5 -->
+<hr>
+<h3>📍 Día 5 — Martes 28 de julio: Tokio → Hakone 🌊♨️ <span class="day-date">| Onsen</span></h3>
+<img class="day-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Hakonejinja_-01.jpg/960px-Hakonejinja_-01.jpg" alt="Hakone Jinja" loading="lazy">
+
+<p><strong>Desayuno:</strong> Hotel y <strong>check-out</strong></p>
+<p><strong>Mañana:</strong></p>
+<ul>
+  <li>Opcional: 1-2h en Akihabara o Ginza si algo pendiente</li>
+</ul>
+<p><strong>Mediodía:</strong> Recoger maletas del hotel</p>
+<p><strong>🚄 Cómo ir a Hakone:</strong></p>
+<p><strong>Opción A (recomendada con JR Pass, 1.5h):</strong></p>
+<ol>
+  <li>🚇 Metro Nihonbashi → <strong>Tokio Station</strong> (5min, Suica)</li>
+  <li>🚄 Shinkansen Tokio → <strong>Odawara</strong> (35min, ✅ con JR Pass)</li>
+  <li>🚌 Hakone Free Pass (~¥5.700) + autobús a Hakone-Yumoto. O taxi (~¥3.000)</li>
+</ol>
+<p><strong>Opción B (sin JR Pass, 1.5h directo):</strong> Odakyu Romancecar desde Shinjuku a Hakone-Yumoto (~¥2.300)</p>
+<p><strong>Opción C (solo JR, económica):</strong> Shinkansen a Odawara → autobús público (~¥700)</p>
+<div class="tip">💡 Usad la Opción A. El JR Pass cubre el Shinkansen y luego el Hakone Free Pass en Odawara.</div>
+<p><strong>15:00-18:00 — Check-in Mikawaya Ryokan</strong></p>
+<ul>
+  <li>♨️ <strong>Onsen</strong> (baño termal japonés) — imperdible.</li>
+  <li>👘 Poneos el yukata del ryokan</li>
+</ul>
+<p><strong>Cena:</strong> 🏆 <strong>Kaiseki incluida</strong> en el ryokan — cena tradicional japonesa de varios platos. Cada plato pequeño y variado (pescado, verdura, carne, sopa).</p>
+<div class="tip">La cena kaiseki tiene horario fijo (18:00-19:00). Preguntad a la llegada.</div>
+
+<!-- DÍA 6 -->
+<hr>
+<h3>📍 Día 6 — Miércoles 29 de julio: Hakone → Kioto 🚄 <span class="day-date">| Lago Ashi · Gion</span></h3>
+<img class="day-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/260505_Moto-Hakone_Hakone_Japan01s3.jpg/960px-260505_Moto-Hakone_Hakone_Japan01s3.jpg" alt="Lago Ashi - Hakone" loading="lazy">
+
+<p><strong>Desayuno:</strong> En el ryokan (incluido) | <strong>Check-out:</strong> 10:00</p>
+<p><strong>Mañana — Ruta turística de Hakone:</strong> Con el <strong>Hakone Free Pass</strong> (~¥5.700) podéis hacer el circuito completo:</p>
+<ol>
+  <li>🚃 <strong>Hakone Tozan Train</strong> (tren cremallera) hasta Gora</li>
+  <li>🚡 <strong>Cable car</strong> hasta Sounzan</li>
+  <li>🚠 <strong>Teleférico de Hakone</strong> — vistas del monte Fuji (si el tiempo acompaña)</li>
+  <li>🚢 <strong>Barco pirata</strong> en el Lago Ashi — la mejor experiencia</li>
+  <li>⛩️ <strong>Torii flotante</strong> del santuario Hakone</li>
+</ol>
+<p><strong>Comida:</strong> En Hakone-Yumoto — <em>Yamabiko</em> (soba/fideos)</p>
+<p><strong>🚄 A Kioto (2.5h):</strong></p>
+<ol>
+  <li>🚌 Mikawaya → Hakone-Yumoto: autobús (10min, Hakone Free Pass) o taxi (~¥1.500)</li>
+  <li>🚌 Hakone-Yumoto → Odawara: autobús (~30min, ¥700) o taxi (~¥4.000)</li>
+  <li>🚄 <strong>Odawara → Kioto: Shinkansen Hikari (~1h45min)</strong> ✅ <strong>JR Pass cubre</strong> (frecuencia cada 20-30min)</li>
+  <li>🚇 Kioto Station → <strong>DoubleTree by Hilton Kyoto Higashiyama:</strong> taxi (~¥2.000, 10min) o autobús 206/207 (~¥230, 25min)</li>
+</ol>
+<div class="tip">Con 3 personas y maletas, <strong>taxi en Kioto Station</strong> es lo más práctico (¥2.000 bien gastados).</div>
+<p><strong>Noche:</strong></p>
+<ul>
+  <li>🚶‍♂️ <strong>Paseo por Gion</strong> (barrio de las geishas) — a 10min del hotel</li>
+  <li>🍜 <strong>Cena:</strong> <em>Pontocho</em> (callejón con restaurantes junto al río)</li>
+</ul>
+<!-- DÍA 7 -->
+<hr>
+<h3>📍 Día 7 — Jueves 30 de julio: Kioto ⛩️ <span class="day-date">| Fushimi Inari · Arashiyama</span></h3>
+<img class="day-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine%2C_Kyoto%2C_Japan.jpg/960px-Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine%2C_Kyoto%2C_Japan.jpg" alt="Fushimi Inari" loading="lazy">
+<p><strong>Desayuno:</strong> Hotel (incluido)</p>
+<p><strong>Mañana — Fushimi Inari + Templo:</strong></p>
+<ul>
+  <li>⛩️ <strong>Fushimi Inari-taisha</strong> (miles de torii rojos) — GRATIS, 24h. <strong>ID A LAS 7:00</strong></li>
+  <li>🚶 <strong>Kiyomizu-dera</strong> (¥500) — templo-balcón de madera</li>
+</ul>
+<p><strong>Comida:</strong> <em>Nishiki Market</em> — comida callejera, cada uno pica lo que quiera.</p>
+<p><strong>Tarde — Arashiyama:</strong></p>
+<ul>
+  <li>🎋 <strong>Bosque de bambú</strong> — GRATIS. A las 16:00 hay menos gente</li>
+  <li>🌊 <strong>Tenryu-ji</strong> (¥600-800)</li>
+  <li>🚶‍♂️ Pasear junto al río Katsura</li>
+</ul>
+<p><strong>Cena:</strong> <em>Omen Kodai-ji</em> (fideos udon + tempura) o izakaya cerca del hotel.</p>
+
+<!-- DÍA 8 -->
+<hr>
+<h3>📍 Día 8 — Viernes 31 de julio: Kioto ⛩️ <span class="day-date">| Kinkaku-ji · Nara opcional</span></h3>
+<img class="day-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Golden_Pavilion_Kinkaku-ji_water_mirror_2024.jpg/960px-Golden_Pavilion_Kinkaku-ji_water_mirror_2024.jpg" alt="Kinkaku-ji" loading="lazy">
+
+<p><strong>Desayuno:</strong> Hotel</p>
+<p><strong>Mañana — Kinkaku-ji + Ryoan-ji:</strong></p>
+<ul>
+  <li>🏯 <strong>Kinkaku-ji</strong> (Pabellón Dorado) — ¥500</li>
+  <li>🪨 <strong>Ryoan-ji</strong> (jardín zen de rocas) — ¥500</li>
+  <li>⏱️ 2.5h</li>
+</ul>
+<p><strong>Comida:</strong> <em>Okonomiyaki Katsu</em> u occidental. Hay un <em>Outback Steakhouse</em> en la estación de Kioto.</p>
+<p><strong>Tarde libre:</strong></p>
+<ul>
+  <li>Opción A 🚃 <strong>Excursión a Nara</strong> (45min JR, cubierto por JR Pass): ciervos sagrados, Tōdai-ji</li>
+  <li>Opción B 🛍️ <strong>Compras:</strong> Teramachi-dori, té matcha, souvenirs</li>
+  <li>Opción C ♨️ <strong>Onsen público</strong> si os quedasteis con ganas</li>
+</ul>
+<p><strong>Cena:</strong> <em>Kobe Beef Kaiseki 511</em> o izakaya cerca del hotel.</p>
+
+<!-- DÍA 9 -->
+<hr>
+<h3>📍 Día 9 — Sábado 1 de agosto: Kioto → Osaka 🚄 <span class="day-date">| Dotonbori</span></h3>
+<img class="day-img" src="https://upload.wikimedia.org/wikipedia/commons/4/47/Dotonbori%2C_Osaka%2C_at_night%2C_November_2016.jpg" alt="Dotonbori Osaka" loading="lazy">
+
+<p><strong>Desayuno:</strong> Hotel → <strong>Check-out</strong></p>
+<p><strong>🚄 De Kioto a Osaka (15min Shinkansen — JR Pass cubre):</strong></p>
+<ol>
+  <li>🚇 Hotel → Kioto Station: taxi (~¥1.500, 10min) o autobús 206/207 (~¥230)</li>
+  <li>🚄 Kioto Station → Shin-Osaka: <strong>Shinkansen Hikari/Kodama</strong> (15min, frecuencia cada 10-15min) ✅ <strong>JR Pass</strong></li>
+  <li>🚇 Shin-Osaka → Hotel Nikko Osaka: Metro Midosuji a Namba (10min, ¥290, Suica/Pasmo)</li>
+</ol>
+<div class="tip">Dejad las maletas en <strong>taquillas de Kioto Station</strong> (¥700-1.000/día) o en consigna del hotel.</div>
+<p><strong>Check-in Hotel Nikko Osaka</strong> 🏨</p>
+<p><strong>Tarde — Dotonbori:</strong></p>
+<ul>
+  <li>🦀 <strong>Dotonbori</strong> — letrero Glico, canales, luces de neón</li>
+  <li>🐙 Takoyaki y okonomiyaki</li>
+</ul>
+<p><strong>Cena:</strong></p>
+<ul>
+  <li>🎸 <strong>Hard Rock Café Osaka</strong> (en Dotonbori) — 🏆 opción ganadora</li>
+  <li>O <em>Kushikatsu Daruma</em> (brochetas empanadas)</li>
+</ul>
+<div class="tip">Si coincide, el <strong>Tenjin Matsuri</strong> (fuegos artificiales 🎆) — preguntad en el hotel.</div>
+
+<!-- DÍA 10 -->
+<hr>
+<h3>📍 Día 10 — Domingo 2 de agosto: Osaka 🏯 <span class="day-date">| Castillo · Shinsaibashi</span></h3>
+<img class="day-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Osaka_Castle_03bs3200.jpg/960px-Osaka_Castle_03bs3200.jpg" alt="Osaka Castle" loading="lazy">
+
+<p><strong>Desayuno:</strong> Hotel</p>
+<p><strong>Mañana:</strong></p>
+<ul>
+  <li>🏯 <strong>Castillo de Osaka</strong> (¥600) — 9:00-17:00</li>
+  <li>🚶‍♂️ Parque del castillo</li>
+</ul>
+<p><strong>Comida:</strong> <em>Kuromon Ichiba Market</em> — cada uno pide lo que quiere.</p>
+<p><strong>Tarde — Libre / Shinsaibashi / Despedida Japón:</strong></p>
+<ul>
+  <li>🛍️ <strong>Shinsaibashi Shopping Arcade</strong></li>
+  <li><strong>Namba Parks</strong> (arquitectura espectacular)</li>
+  <li>Comprobad los snacks japoneses para llevar ✈️</li>
+</ul>
+<p><strong>Cena:</strong> <em>Matsusakagyu Yakiniku M</em> (carne de Kobe premium) o algo tranquilo.</p>
+<p><strong>Despedida de Japón</strong> — paseo nocturno por Namba/Dotonbori.</p>
+
+<!-- DÍA 11 -->
+<hr>
+<h3>📍 Día 11 — Lunes 3 de agosto: Osaka → Doha 🛬 <span class="day-date">| KIX → DOH</span></h3>
+<img class="day-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/The_Pearl_Marina_in_Nov_2013.jpg/960px-The_Pearl_Marina_in_Nov_2013.jpg" alt="Doha - The Pearl" loading="lazy">
+
+<p><strong>Desayuno:</strong> Hotel → <strong>Check-out</strong> (guardad maletas en consigna)</p>
+<p><strong>Mañana — Últimas compras/visitas:</strong></p>
+<ul>
+  <li>🚶‍♂️ Último paseo por Dotonbori / Shinsaibashi</li>
+  <li>🍱 Comprar bento para el avión</li>
+</ul>
+<p><strong>15:00</strong> — Recoger maletas del hotel</p>
+<p><strong>🚄 Al aeropuerto:</strong> <strong>Nankai Airport Express</strong> desde Nankai Namba (directo, 40min, ~¥930) o <strong>JR Kansai Airport Line</strong> desde Tennoji (cada 30min, 50min) ✅ <strong>JR Pass cubre solo JR</strong></p>
+<div class="tip">Opción recomendada: JR desde Tennoji si tenéis JR Pass activo. Si no, Nankai Express desde Namba es más barato y directo. El último tren sale ~22:00. Salid del hotel a las <strong>16:00</strong> como muy tarde.</div>
+<p><strong>18:55 → 23:30</strong> — ✈️ <strong>QR803</strong> KIX→DOH (Airbus A350-900, 10h35min)</p>
+<p><strong>00:30</strong> — Llegada a Doha</p>
+<p><strong>Traslado al Hilton Doha:</strong> Taxi oficial o Uber — QAR 50-70 (€13-18), 15min. Pagar con tarjeta.</p>
+<p><strong>Check-in Hilton Doha</strong> 🏨 (Deluxe vistas al mar, B&B)</p>
+
+<!-- DÍA 12 -->
+<hr>
+<h3>📍 Día 12 — Martes 4 de agosto: Doha 🕌 <span class="day-date">| Souq Waqif · Corniche</span></h3>
+<img class="day-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Souq_Waqif%2C_Doha%2C_Catar%2C_2013-08-05%2C_DD_84.JPG/960px-Souq_Waqif%2C_Doha%2C_Catar%2C_2013-08-05%2C_DD_84.JPG" alt="Souq Waqif Doha" loading="lazy">
+
+<p><strong>Desayuno:</strong> Hilton Doha (incluido, buffet tremendo)</p>
+<p><strong>Mañana:</strong></p>
+<ul>
+  <li>🏊 <strong>Piscina + playa privada del Hilton</strong></li>
+  <li>🛏️ O dormir hasta tarde</li>
+</ul>
+<p><strong>Comida:</strong> En el hotel o en Souq Waqif.</p>
+<p><strong>Tarde — Ciudad:</strong></p>
+<ul>
+  <li>🕌 <strong>Souq Waqif</strong> (mercadillo tradicional) — GRATIS. 16:00-22:00</li>
+  <li>🎨 <strong>Museo de Arte Islámico (MIA)</strong> — GRATIS</li>
+  <li>🌇 <strong>Corniche</strong> — atardecer espectacular</li>
+</ul>
+<p><strong>Cena:</strong> En <strong>Souq Waqif</strong> (<em>Parisa</em> o <em>Shujaa</em>) o en el Hilton.</p>
+<div class="tip">Doha en agosto = <strong>40-45°C</strong>. Mucho aire acondicionado. Llevad agua y moved los visites en Uber/taxi.</div>
+
+<!-- DÍA 13 -->
+<hr>
+<h3>📍 Día 13 — Miércoles 5 de agosto: Vuelta a casa ✈️ <span class="day-date">| DOH → MAD</span></h3>
+<img class="day-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Souq_Waqif%2C_Doha%2C_Catar%2C_2013-08-05%2C_DD_84.JPG/960px-Souq_Waqif%2C_Doha%2C_Catar%2C_2013-08-05%2C_DD_84.JPG" alt="Doha" loading="lazy">
+
+<p><strong>Desayuno:</strong> Hotel (incluido)</p>
+<p><strong>Mañana:</strong></p>
+<ul>
+  <li>☀️ Último baño en la piscina del Hilton</li>
+  <li>🛍️ Últimas compras en Souq Waqif (abre a las 9:00)</li>
+  <li><strong>Check-out:</strong> 12:00 (dejar maletas en consigna)</li>
+</ul>
+<p><strong>🚗 Traslado al aeropuerto:</strong></p>
+<ul>
+  <li>Taxi/Uber → Aeropuerto Hamad (QAR 40-50, €10-13, 10min)</li>
+  <li>💡 Sobre las <strong>13:00</strong> salid del hotel</li>
+</ul>
+<p><strong>Comida:</strong> En el aeropuerto de Doha — el Hamad International Airport tiene restaurantes buenísimos.</p>
+<p><strong>15:15 → 21:25</strong> — ✈️ <strong>QR151</strong> DOH→MAD (Boeing 787-9, 7h10min)</p>
+<p><strong>🅿️ Parking T4 P4</strong> — Localizador KJ1WS. Pagar en cajero automático con tarjeta.</p>
+<p><strong>🏠 ¡Bienvenidos a casa!</strong></p>
+
+<hr>
+
+<!-- ===== RESERVAS ===== -->
+<section>
+<h2>🎫 Reservas importantes (hacedlo ya)</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Atracción</th><th>Precio</th><th>Cómo reservar</th><th>Urgencia</th></tr></thead>
+<tbody>
+<tr><td>🎬 <strong>Museo Ghibli</strong></td><td>¥1.000</td><td>Lawson Ticket (l-tike.com) — día 10 de cada mes a las 10:00 JST</td><td>🔴 <strong>MUY URGENTE</strong></td></tr>
+<tr><td>🌌 <strong>teamLab Borderless</strong></td><td>¥3.800</td><td>teamlab.art (web)</td><td>🟡 Recomendado</td></tr>
+<tr><td>🏙️ <strong>Shibuya Sky</strong></td><td>¥2.200</td><td>Web oficial</td><td>🟢 Con 1-2 días basta</td></tr>
+<tr><td>🎢 <strong>Universal Studios Japan</strong></td><td>¥9.000-10.900</td><td>Web oficial USJ</td><td>🟢 Días antes</td></tr>
+<tr><td>🕌 <strong>MIA Doha</strong></td><td>GRATIS</td><td>Reserva online</td><td>🟢 Días antes</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<hr>
+
+<!-- ===== APPS ===== -->
+<section>
+<h2>📱 Apps que instalar antes de ir</h2>
+<ol>
+  <li>📍 <strong>Google Maps</strong> — descargar mapas offline de Tokio, Kioto, Osaka, Hakone</li>
+  <li>🌐 <strong>Google Translate</strong> — descargar japonés offline</li>
+  <li>🚃 <strong>Japan Travel by Navitime</strong> — horarios Shinkansen</li>
+  <li>💱 <strong>XE Currency</strong> — conversor de divisas offline</li>
+  <li>🚄 <strong>SmartEX</strong> — reservar Shinkansen online (opcional)</li>
+  <li>💳 <strong>Suica / Pasmo</strong> — en Apple Wallet</li>
+  <li>📱 <strong>eSIM: Airalo o Ubigi</strong> — instalar y activar en llegada</li>
+  <li>🏨 <strong>WhatsApp</strong> — contacto El Corte Inglés / Tourmundial</li>
+</ol>
+</section>
+
+<hr>
+
+<!-- ===== DATOS MÓVILES ===== -->
+<section>
+<h2>🌐 Datos móviles</h2>
+<p><strong>Recomendación:</strong> eSIM de <strong>Holafly</strong> (Tourmundial da descuento). Ilimitado 4G/5G. Se activa al llegar a Japón. Instaladla antes de salir de casa.</p>
+<p>Para Doha: la eSIM de Japón probablemente no cubra. Podéis:</p>
+<ul>
+  <li>Usar wifi del hotel/aeropuerto</li>
+  <li>Comprar eSIM Doha específica (Airalo)</li>
+  <li>Usar datos en roaming (mirar tarifa)</li>
+</ul>
+</section>
+
+<hr>
+
+<!-- ===== CLIMA ===== -->
+<section>
+<h2>🌡️ Clima — Qué llevar</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Ciudad</th><th>Temp</th><th>Humedad</th><th>Qué llevar</th></tr></thead>
+<tbody>
+<tr><td>🗼 Tokio (jul)</td><td>28-33°C</td><td>75%</td><td>Ropa ligera, abanico, gorra</td></tr>
+<tr><td>⛩️ Kioto (jul)</td><td>30-35°C</td><td>80%</td><td>Igual + agua constante</td></tr>
+<tr><td>🏯 Osaka (ago)</td><td>32-36°C</td><td>75%</td><td>Igual</td></tr>
+<tr><td>🕌 Doha (ago)</td><td>40-45°C</td><td>50%</td><td>Ropa muy ligera, protector solar</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Recomendaciones:</strong></p>
+<ul>
+  <li>👟 Calzado cómodo — vais a caminar mucho (10-15km/día)</li>
+  <li>🧴 Protector solar + repelente mosquitos</li>
+  <li>🧣 Pañuelo/toalla pequeña para el cuello</li>
+  <li>☂️ Paraguas plegable</li>
+  <li>👗 Para templos: cubrir hombros y rodillas</li>
+</ul>
+</section>
+
+<hr>
+
+<!-- ===== MAPA DE ZONAS ===== -->
+<section>
+<h2>🗺️ Mapa de zonas</h2>
+
+<h3>Tokio</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Zona</th><th>Para qué</th></tr></thead>
+<tbody>
+<tr><td><strong>Asakusa</strong> 🏮</td><td>Templo Senso-ji, tradición</td></tr>
+<tr><td><strong>Shibuya</strong> 🚦</td><td>El cruce, compras, Shibuya Sky</td></tr>
+<tr><td><strong>Harajuku</strong> 👗</td><td>Moda joven, Takeshita Street</td></tr>
+<tr><td><strong>Akihabara</strong> 🕹️</td><td>Electrónica, anime, gaming</td></tr>
+<tr><td><strong>Shinjuku</strong> 🌆</td><td>Rascacielos, ocio nocturno</td></tr>
+<tr><td><strong>Ginza</strong> 💎</td><td>Compras de lujo, arquitectura</td></tr>
+<tr><td><strong>Nihonbashi</strong> 🏛️</td><td>Donde está vuestro hotel</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Kioto</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Zona</th><th>Para qué</th></tr></thead>
+<tbody>
+<tr><td><strong>Higashiyama</strong> ⛩️</td><td>Zona del hotel, Kiyomizu-dera</td></tr>
+<tr><td><strong>Arashiyama</strong> 🎋</td><td>Bambú, Tenryu-ji</td></tr>
+<tr><td><strong>Noroeste</strong> 🏯</td><td>Kinkaku-ji, Ryoan-ji</td></tr>
+<tr><td><strong>Gion</strong> 👘</td><td>Geishas, calles tradicionales</td></tr>
+<tr><td><strong>Fushimi</strong> ⛩️</td><td>Inari-taisha (torii rojos)</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Osaka</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Zona</th><th>Para qué</th></tr></thead>
+<tbody>
+<tr><td><strong>Namba/Dotonbori</strong> 🦀</td><td>Corazón de Osaka, vuestro hotel</td></tr>
+<tr><td><strong>Shinsaibashi</strong> 🛍️</td><td>Calle comercial</td></tr>
+<tr><td><strong>Umeda</strong> 🌆</td><td>Estación principal, compras</td></tr>
+<tr><td><strong>Osaka Castle</strong> 🏯</td><td>El castillo</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<hr>
+
+<!-- ===== PRESUPUESTO ===== -->
+<section>
+<h2>💰 Presupuesto orientativo (los 3)</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Concepto</th><th>Coste</th></tr></thead>
+<tbody>
+<tr><td>✈️ Vuelos + 🏨 Hoteles</td><td>✅ Ya pagado (paquete)</td></tr>
+<tr><td>🚄 JR Pass 7d × 3</td><td>✅ Ya pagado (~150.000 ¥)</td></tr>
+<tr><td>🅿️ Parking Aena (ViaT 6275120002786508)</td><td>✅ 150€ (pdte pago)</td></tr>
+<tr><td>🍜 Comidas (13 días × 3)</td><td>~€1.050-1.700</td></tr>
+<tr><td>🎫 Entradas/sitios</td><td>~€100-200</td></tr>
+<tr><td>🚃 Transporte local</td><td>~€100-150</td></tr>
+<tr><td>🛍️ Compras/souvenirs</td><td>A discreción</td></tr>
+<tr><td>💊 Seguro viaje</td><td>✅ Incluido</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<hr>
+
+<!-- ===== CONTACTOS ===== -->
+<section>
+<h2>📞 Contactos útiles</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Qué</th><th>Teléfono</th><th>Nota</th></tr></thead>
+<tbody>
+<tr><td>🏢 <strong>Tourmundial / El Corte Inglés</strong></td><td>☎ 941 20 24 28</td><td>Laura Fernández</td></tr>
+<tr><td>✈️ <strong>Qatar Airways España</strong></td><td>☎ 91 123 03 92</td><td>PNR 7NYVGB</td></tr>
+<tr><td>🛡️ <strong>Seguro Generali/MANA 24h</strong></td><td>☎ +34 911 97 62 31</td><td>Póliza 991081</td></tr>
+<tr><td>🚑 <strong>Emergencias Japón</strong></td><td>☎ 110 (policía) / 119 (ambulancia)</td><td></td></tr>
+<tr><td>🚑 <strong>Emergencias Doha</strong></td><td>☎ 999</td><td></td></tr>
+<tr><td>🇪🇸 <strong>Embajada España Tokio</strong></td><td>☎ +81-3-3583-8531</td><td></td></tr>
+<tr><td>🇪🇸 <strong>Embajada España Doha</strong></td><td>☎ +974-4483-6784</td><td></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<hr>
+
+<div class="footer">
+  <p><em>¡Buen viaje! Disfrutadlo al máximo 🗾🇯🇵🎆</em></p>
+  <p style="margin-top:0.5rem;font-size:0.75rem;">Generado desde Plan completo Japon 2026.md · Julio 2026 · Actualizado 3 noches Tokio</p>
+</div>
+
+</div><!-- /container -->
+</body>
+</html>
